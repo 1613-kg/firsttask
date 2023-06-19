@@ -1,5 +1,7 @@
 import 'package:firsttask/Day1/screens/navigate.dart';
 import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
+import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
+import 'package:firsttask/Day2/ToastIntegration/Screens/toastScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'Day1/screens/bottom.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: screenA(text: "From Main"),
+      home: imagePick(),
     );
   }
 }
