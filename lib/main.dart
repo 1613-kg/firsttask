@@ -1,7 +1,8 @@
-import 'package:firsttask/screens/navigate.dart';
+import 'package:firsttask/Day1/screens/navigate.dart';
+import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/bottom.dart';
+import 'Day1/screens/bottom.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Navigate(),
+      debugShowCheckedModeBanner: false,
+      home: screenA(text: "From Main"),
     );
   }
 }

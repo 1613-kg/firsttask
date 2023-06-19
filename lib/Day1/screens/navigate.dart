@@ -1,5 +1,5 @@
-import 'package:firsttask/screens/bottom.dart';
-import 'package:firsttask/screens/top.dart';
+import 'package:firsttask/Day1/screens/bottom.dart';
+import 'package:firsttask/Day1/screens/top.dart';
 import 'package:flutter/material.dart';
 
 import 'drawer_screen.dart';
