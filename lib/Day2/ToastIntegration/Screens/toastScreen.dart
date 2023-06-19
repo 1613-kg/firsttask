@@ -1,7 +1,6 @@
+import 'package:firsttask/Day2/ToastIntegration/widgets/customToast.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../widget/customToast.dart';
 
 class toastScreen extends StatefulWidget {
   toastScreen({super.key});
@@ -11,7 +10,6 @@ class toastScreen extends StatefulWidget {
 }
 
 class _toastScreenState extends State<toastScreen> {
-  GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   void _showToastWithNoContext() {
     Fluttertoast.showToast(
         msg: "This is Toast with no context",
@@ -23,18 +21,21 @@ class _toastScreenState extends State<toastScreen> {
         fontSize: 16.0);
   }
 
-  late FToast fToast;
+  FToast? fToast;
 
   @override
-  void _showToastWithContext(BuildContext con) {
-    void initState() {
-      // TODO: implement initState
-      fToast = FToast();
-      super.initState();
-      fToast.init(navigatorKey.currentContext!);
-    }
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fToast = FToast();
+    fToast?.init(context);
+  }
 
-    fToast.showToast(child: customToast());
+  void _showToastWithContext() {
+    fToast?.showToast(
+      child: customToast(),
+      toastDuration: Duration(seconds: 3),
+    );
   }
 
   @override
@@ -48,12 +49,12 @@ class _toastScreenState extends State<toastScreen> {
                 onPressed: () {
                   _showToastWithNoContext();
                 },
-                child: Text("Toast with no context")),
+                child: Text("Show Toast With No Context")),
             ElevatedButton(
                 onPressed: () {
-                  _showToastWithContext(context);
+                  _showToastWithContext();
                 },
-                child: Text("Toast with context")),
+                child: Text("Show Toast With Context")),
           ],
         ),
       ),
