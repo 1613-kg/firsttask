@@ -8,6 +8,9 @@ import 'package:firsttask/Day%203/switch/screens/homeSwitch.dart';
 import 'package:firsttask/Day%204/Card%20and%20Stack/screens/homeCardStack.dart';
 import 'package:firsttask/Day%204/GridView/screens/homeGridView.dart';
 import 'package:firsttask/Day%204/ListWithLoadMore/screens/homeListLoadMore.dart';
+import 'package:firsttask/Day%205/Image%20Slider/screens/homeImageSlider.dart';
+import 'package:firsttask/Day%205/Rating%20Bar/screens/homeRatingBar.dart';
+import 'package:firsttask/Day%205/Web%20View/screens/homeWebView.dart';
 import 'package:firsttask/Day1/screens/navigate.dart';
 import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
 import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
@@ -18,6 +21,9 @@ import 'Day 3/Check Box/screens/homeCheckBox.dart';
 import 'Day 4/Graphs/BarGraphs/screens/homeBarGraphs.dart';
 import 'Day 4/Graphs/LineGraphs/screens/homeLineGraphs.dart';
 import 'Day 4/Graphs/Pie Graphs/screens/homePieGraphs.dart';
+import 'Day 5/Range Bar/screens/homeRangeBar.dart';
+import 'Day 5/Search View/screens/homeSearchView.dart';
+import 'Day 5/SeekBar/screens/homeSeekBar.dart';
 import 'Day1/screens/bottom.dart';
 
 void main() {
@@ -36,7 +42,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: homePieGraphs(),
+      home: homeSearchView(),
     );
   }
 }
