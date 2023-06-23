@@ -11,6 +11,12 @@ import 'package:firsttask/Day%204/ListWithLoadMore/screens/homeListLoadMore.dart
 import 'package:firsttask/Day%205/Image%20Slider/screens/homeImageSlider.dart';
 import 'package:firsttask/Day%205/Rating%20Bar/screens/homeRatingBar.dart';
 import 'package:firsttask/Day%205/Web%20View/screens/homeWebView.dart';
+import 'package:firsttask/Day%206/Bottom%20Sheet/screens/homeBottomSheet.dart';
+import 'package:firsttask/Day%206/Carousel%20Slider/screens/homeCarouselSlider.dart';
+import 'package:firsttask/Day%206/Collapse/screens/homeCollapse.dart';
+import 'package:firsttask/Day%206/Horizontal%20List/screens/homeHorizontalList.dart';
+import 'package:firsttask/Day%206/Positioned/screens/homePositioned.dart';
+import 'package:firsttask/Day%206/Splash%20Screen/screens/homeSplashScreen.dart';
 import 'package:firsttask/Day1/screens/navigate.dart';
 import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
 import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
@@ -42,7 +48,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: homeSearchView(),
+      home: homeBottomSheet(),
     );
   }
 }
