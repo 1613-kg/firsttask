@@ -56,7 +56,7 @@ class _loginScreenState extends State<loginScreen> {
                           color: Colors.black45),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 50,
                     ),
 
                     /// email
@@ -92,6 +92,7 @@ class _loginScreenState extends State<loginScreen> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
                         suffix: TextButton(
                           child: Text(
                             "Forgot",
