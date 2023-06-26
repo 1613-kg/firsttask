@@ -17,6 +17,7 @@ import 'package:firsttask/Day%206/Collapse/screens/homeCollapse.dart';
 import 'package:firsttask/Day%206/Horizontal%20List/screens/homeHorizontalList.dart';
 import 'package:firsttask/Day%206/Positioned/screens/homePositioned.dart';
 import 'package:firsttask/Day%206/Splash%20Screen/screens/homeSplashScreen.dart';
+import 'package:firsttask/Day%207/LoginAndRegisterPageUI/screens/registerScreen.dart';
 import 'package:firsttask/Day1/screens/navigate.dart';
 import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
 import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
@@ -46,9 +47,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      home: homeBottomSheet(),
+      home: registerScreen(),
     );
   }
 }
