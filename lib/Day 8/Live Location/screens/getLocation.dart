@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 class getLocation extends StatefulWidget {
@@ -11,6 +12,7 @@ class getLocation extends StatefulWidget {
 class _getLocationState extends State<getLocation> {
   String lon = "Click on below button";
   String lat = "Click on below button";
+  String address = "Click on below button";
 
   Future<Position> getUserLocation() async {
     bool serviceEnabled;
@@ -44,7 +46,17 @@ class _getLocationState extends State<getLocation> {
 
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
-    return await Geolocator.getCurrentPosition();
+    return await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+  }
+
+  Future<void> getAddress(Position position) async {
+    List<Placemark> placemark =
+        await placemarkFromCoordinates(position.latitude, position.longitude);
+    Placemark place = placemark[0];
+    address =
+        "${place.street} , ${place.locality} , ${place.name} , ${place.postalCode} , ${place.country}";
+    setState(() {});
   }
 
   @override
@@ -64,15 +76,21 @@ class _getLocationState extends State<getLocation> {
             const SizedBox(
               height: 20,
             ),
+            Text('Address: ${address}'),
+            const SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
               child: Text("Detect my Location"),
-              onPressed: () {
-                setState(() {
-                  getUserLocation().then((value) => {
-                        lat = value.latitude.toString(),
-                        lon = value.longitude.toString(),
-                      });
-                });
+              onPressed: () async {
+                Position position = await getUserLocation();
+
+                lat = position.latitude.toString();
+                lon = position.longitude.toString();
+
+                getAddress(position);
+
+                // setState(() {});
               },
             ),
           ],
