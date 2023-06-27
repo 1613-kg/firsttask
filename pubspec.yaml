@@ -48,6 +48,10 @@ dependencies:
   carousel_slider: ^4.2.1
   animated_splash_screen:
   modal_bottom_sheet: ^2.1.2
+  geolocator:
+  geocoding:
+  google_maps_flutter:
+ 
 
 dev_dependencies:
   flutter_test:
