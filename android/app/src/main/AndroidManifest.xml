@@ -7,6 +7,10 @@
         android:label="firsttask"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyDORAiwsJBUe0hBl6ViXWmf97aVT3VnYqg"/>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

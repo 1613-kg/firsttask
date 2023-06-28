@@ -19,6 +19,7 @@ import 'package:firsttask/Day%206/Positioned/screens/homePositioned.dart';
 import 'package:firsttask/Day%206/Splash%20Screen/screens/homeSplashScreen.dart';
 import 'package:firsttask/Day%207/LoginAndRegisterPageUI/screens/registerScreen.dart';
 import 'package:firsttask/Day%208/Live%20Location/screens/getLocation.dart';
+import 'package:firsttask/Day%209/Location%20on%20Map/screens/getLocationMap.dart';
 import 'package:firsttask/Day1/screens/navigate.dart';
 import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
 import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      home: getLocation(),
+      home: getLocationMap(),
     );
   }
 }
