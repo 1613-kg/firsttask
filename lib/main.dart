@@ -1,3 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firsttask/Day%2010/Authentication/screens/loginScreenAuth.dart';
+import 'package:firsttask/Day%2010/Push%20Notification/services/firebase_mssg.dart';
 import 'package:firsttask/Day%203/AlertDialog/screens/homeAlertDailog.dart';
 import 'package:firsttask/Day%203/DateTime/screens/homeDateTime.dart';
 import 'package:firsttask/Day%203/Drop%20Down/screens/homeDropDown.dart';
@@ -26,6 +29,7 @@ import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
 import 'package:firsttask/Day2/ToastIntegration/Screens/toastScreen.dart';
 import 'package:flutter/material.dart';
 
+import 'Day 10/Push Notification/screens/homeNotification.dart';
 import 'Day 3/Check Box/screens/homeCheckBox.dart';
 import 'Day 4/Graphs/BarGraphs/screens/homeBarGraphs.dart';
 import 'Day 4/Graphs/LineGraphs/screens/homeLineGraphs.dart';
@@ -35,7 +39,10 @@ import 'Day 5/Search View/screens/homeSearchView.dart';
 import 'Day 5/SeekBar/screens/homeSeekBar.dart';
 import 'Day1/screens/bottom.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  await FirebaseMessage().initNotification();
   runApp(const MyApp());
 }
 
@@ -52,7 +59,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      home: getLocationMap(),
+      home: homeNotification(),
     );
   }
 }

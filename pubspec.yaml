@@ -51,6 +51,12 @@ dependencies:
   geolocator:
   geocoding:
   google_maps_flutter:
+  firebase_auth: ^4.6.3
+  firebase_core:
+  google_sign_in:
+  flutter_signin_button:
+  flutter_facebook_auth: ^6.0.0
+  firebase_messaging: ^14.6.4
  
 
 dev_dependencies:
