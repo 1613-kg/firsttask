@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firsttask/Day%2010/Authentication/screens/loginScreenAuth.dart';
 import 'package:firsttask/Day%2010/Push%20Notification/services/firebase_mssg.dart';
+import 'package:firsttask/Day%2011/Firebase%20Storage/screens/inputFromUser.dart';
 import 'package:firsttask/Day%203/AlertDialog/screens/homeAlertDailog.dart';
 import 'package:firsttask/Day%203/DateTime/screens/homeDateTime.dart';
 import 'package:firsttask/Day%203/Drop%20Down/screens/homeDropDown.dart';
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      home: homeNotification(),
+      home: inputFromUser(),
     );
   }
 }
