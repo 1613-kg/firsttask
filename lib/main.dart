@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firsttask/Day%2010/Authentication/screens/loginScreenAuth.dart';
 import 'package:firsttask/Day%2010/Push%20Notification/services/firebase_mssg.dart';
@@ -28,9 +29,11 @@ import 'package:firsttask/Day1/screens/navigate.dart';
 import 'package:firsttask/Day2/DataPassing/Screens/screenA.dart';
 import 'package:firsttask/Day2/ImagePicker/screens/image_home_screen.dart';
 import 'package:firsttask/Day2/ToastIntegration/Screens/toastScreen.dart';
+import 'package:firsttask/translations/codegen_loader.g.dart';
 import 'package:flutter/material.dart';
 
 import 'Day 10/Push Notification/screens/homeNotification.dart';
+import 'Day 12/Language Converter/screens/changeButtonScreen.dart';
 import 'Day 3/Check Box/screens/homeCheckBox.dart';
 import 'Day 4/Graphs/BarGraphs/screens/homeBarGraphs.dart';
 import 'Day 4/Graphs/LineGraphs/screens/homeLineGraphs.dart';
@@ -44,7 +47,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await FirebaseMessage().initNotification();
-  runApp(const MyApp());
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+        supportedLocales: [Locale('en'), Locale('hi')],
+        path: 'assets/translations',
+        fallbackLocale: Locale('en'),
+        assetLoader: CodegenLoader(),
+        child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -53,6 +64,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -60,7 +74,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
       ),
       debugShowCheckedModeBanner: false,
-      home: inputFromUser(),
+      home: changeButtonScreen(),
     );
   }
 }
