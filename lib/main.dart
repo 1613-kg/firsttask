@@ -3,6 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firsttask/Day%2010/Authentication/screens/loginScreenAuth.dart';
 import 'package:firsttask/Day%2010/Push%20Notification/services/firebase_mssg.dart';
 import 'package:firsttask/Day%2011/Firebase%20Storage/screens/inputFromUser.dart';
+import 'package:firsttask/Day%2013/Theme%20change/screens/homeChangeTheme.dart';
+import 'package:firsttask/Day%2013/Theme%20change/theme/theme_constants.dart';
+import 'package:firsttask/Day%2013/Theme%20change/theme/theme_manager.dart';
 import 'package:firsttask/Day%203/AlertDialog/screens/homeAlertDailog.dart';
 import 'package:firsttask/Day%203/DateTime/screens/homeDateTime.dart';
 import 'package:firsttask/Day%203/Drop%20Down/screens/homeDropDown.dart';
@@ -58,8 +61,34 @@ Future<void> main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeManager _themeManager = ThemeManager();
+  themeListener() {
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    _themeManager.removeListener(themeListener);
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _themeManager.addListener(themeListener);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +97,16 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        fontFamily: 'Montserrat',
-      ),
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      //   fontFamily: 'Montserrat',
+      // ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: _themeManager.currentTheme(),
       debugShowCheckedModeBanner: false,
-      home: changeButtonScreen(),
+      home: homeChangeTheme(),
     );
   }
 }
