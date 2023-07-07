@@ -59,6 +59,8 @@ dependencies:
   cloud_firestore:
   firebase_storage: ^11.2.4
   easy_localization: ^3.0.0
+  math_expressions:
+  auto_size_text: ^3.0.0
  
 
 dev_dependencies:

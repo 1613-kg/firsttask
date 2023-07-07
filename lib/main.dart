@@ -6,6 +6,7 @@ import 'package:firsttask/Day%2011/Firebase%20Storage/screens/inputFromUser.dart
 import 'package:firsttask/Day%2013/Theme%20change/screens/homeChangeTheme.dart';
 import 'package:firsttask/Day%2013/Theme%20change/theme/theme_constants.dart';
 import 'package:firsttask/Day%2013/Theme%20change/theme/theme_manager.dart';
+import 'package:firsttask/Day%2014/Calculator/screens/homeCalculator.dart';
 import 'package:firsttask/Day%203/AlertDialog/screens/homeAlertDailog.dart';
 import 'package:firsttask/Day%203/DateTime/screens/homeDateTime.dart';
 import 'package:firsttask/Day%203/Drop%20Down/screens/homeDropDown.dart';
@@ -61,35 +62,10 @@ Future<void> main() async {
   );
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  ThemeManager _themeManager = ThemeManager();
-  themeListener() {
-    if (mounted) {
-      setState(() {});
-    }
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _themeManager.removeListener(themeListener);
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    _themeManager.addListener(themeListener);
-    super.initState();
-  }
-
+  // ThemeManager _themeManager = ThemeManager();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -104,9 +80,9 @@ class _MyAppState extends State<MyApp> {
       // ),
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: _themeManager.currentTheme(),
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: homeChangeTheme(),
+      home: homeCalculator(),
     );
   }
 }

@@ -41,7 +41,9 @@ class _homeChangeThemeState extends State<homeChangeTheme> {
               ),
               IconButton(
                   onPressed: () {
-                    _themeManager.switchTheme();
+                    setState(() {
+                      _themeManager.switchTheme();
+                    });
                   },
                   icon: Icon(
                     Icons.sunny,
