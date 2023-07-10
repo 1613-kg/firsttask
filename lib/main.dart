@@ -7,6 +7,7 @@ import 'package:firsttask/Day%2013/Theme%20change/screens/homeChangeTheme.dart';
 import 'package:firsttask/Day%2013/Theme%20change/theme/theme_constants.dart';
 import 'package:firsttask/Day%2013/Theme%20change/theme/theme_manager.dart';
 import 'package:firsttask/Day%2014/Calculator/screens/homeCalculator.dart';
+import 'package:firsttask/Day%2015/Api%20Calling/screens/homeData.dart';
 import 'package:firsttask/Day%203/AlertDialog/screens/homeAlertDailog.dart';
 import 'package:firsttask/Day%203/DateTime/screens/homeDateTime.dart';
 import 'package:firsttask/Day%203/Drop%20Down/screens/homeDropDown.dart';
@@ -82,7 +83,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: homeCalculator(),
+      home: homeData(),
     );
   }
 }

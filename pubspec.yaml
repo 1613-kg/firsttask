@@ -61,6 +61,7 @@ dependencies:
   easy_localization: ^3.0.0
   math_expressions:
   auto_size_text: ^3.0.0
+  http:
  
 
 dev_dependencies:
