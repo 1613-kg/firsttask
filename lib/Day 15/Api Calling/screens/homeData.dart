@@ -157,7 +157,9 @@ class _homeDataState extends State<homeData> {
                                           setState(() {
                                             FirebaseFetch().deleteData(
                                                 _personData[index].id);
+                                            _personData.removeAt(index);
                                           });
+
                                           _refreshIndicatorKey.currentState
                                               ?.show();
                                         },

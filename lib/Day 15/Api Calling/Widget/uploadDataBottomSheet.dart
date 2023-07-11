@@ -32,9 +32,9 @@ class _uploadDataBottomSheetState extends State<uploadDataBottomSheet> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(
-                  onChanged: (val) {
-                    _nameController.text = val;
-                  },
+                  // onSubmitted: (val) {
+                  //   _nameController.text = val;
+                  // },
                   controller: _nameController,
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
@@ -47,9 +47,9 @@ class _uploadDataBottomSheetState extends State<uploadDataBottomSheet> {
                   height: 15,
                 ),
                 TextField(
-                  onChanged: (val) {
-                    _emailController.text = val;
-                  },
+                  // onSubmitted: (val) {
+                  //   _emailController.text = val;
+                  // },
                   controller: _emailController,
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
@@ -62,9 +62,9 @@ class _uploadDataBottomSheetState extends State<uploadDataBottomSheet> {
                   height: 15,
                 ),
                 TextField(
-                  onChanged: (val) {
-                    _categoryController.text = val;
-                  },
+                  // onSubmitted: (val) {
+                  //   _categoryController.text = val;
+                  // },
                   controller: _categoryController,
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
@@ -77,9 +77,9 @@ class _uploadDataBottomSheetState extends State<uploadDataBottomSheet> {
                   height: 15,
                 ),
                 TextField(
-                  onChanged: (val) {
-                    _contactController.text = val;
-                  },
+                  // onSubmitted: (val) {
+                  //   _contactController.text = val;
+                  // },
                   controller: _contactController,
                   textInputAction: TextInputAction.done,
                   keyboardType: TextInputType.number,
