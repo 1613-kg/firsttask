@@ -8,6 +8,8 @@ import 'package:firsttask/Day%2013/Theme%20change/theme/theme_constants.dart';
 import 'package:firsttask/Day%2013/Theme%20change/theme/theme_manager.dart';
 import 'package:firsttask/Day%2014/Calculator/screens/homeCalculator.dart';
 import 'package:firsttask/Day%2015/Api%20Calling/screens/homeData.dart';
+import 'package:firsttask/Day%2017/Animations/screens/homeAnimationScreen.dart';
+import 'package:firsttask/Day%2017/Animations/screens/homeTweenAnimation.dart';
 import 'package:firsttask/Day%203/AlertDialog/screens/homeAlertDailog.dart';
 import 'package:firsttask/Day%203/DateTime/screens/homeDateTime.dart';
 import 'package:firsttask/Day%203/Drop%20Down/screens/homeDropDown.dart';
@@ -39,6 +41,8 @@ import 'package:flutter/material.dart';
 
 import 'Day 10/Push Notification/screens/homeNotification.dart';
 import 'Day 12/Language Converter/screens/changeButtonScreen.dart';
+import 'Day 16/Deep Links/screens/homeScreenLinks.dart';
+import 'Day 17/Animations/screens/homeTweenSequenceAnimation.dart';
 import 'Day 3/Check Box/screens/homeCheckBox.dart';
 import 'Day 4/Graphs/BarGraphs/screens/homeBarGraphs.dart';
 import 'Day 4/Graphs/LineGraphs/screens/homeLineGraphs.dart';
@@ -83,7 +87,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: homeData(),
+      home: homeTweenSequenceAnimation(),
     );
   }
 }
